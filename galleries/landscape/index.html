@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscapes - Your Name's Portfolio</title>
+    <meta name="description" content="A curated collection of captivating landscape photography by [Your Name], featuring breathtaking natural vistas and scenic beauty.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/lightgallery.min.css"> <link rel="stylesheet" href="/assets/css/lg-thumbnail.min.css"> <link rel="stylesheet" href="/assets/css/lg-zoom.min.css">     </head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">Your Name's Portfolio</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/galleries/landscapes/">Landscapes</a></li>
+                    <li><a href="/galleries/portraits/">Portraits</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-page-header container">
+            <h1 class="page-title">Landscapes</h1>
+            <p class="page-description">Explore the diverse beauty of natural vistas, from towering mountains to serene coastlines, captured in vivid detail.</p>
+        </section>
+
+        <section class="photo-gallery container">
+            <div id="lightgallery" class="photo-grid">
+                <a href="large/mt-fuji-sunrise.webp" data-src="large/mt-fuji-sunrise.webp" data-sub-html="<h4>Mount Fuji Sunrise</h4><p>An iconic view of Mount Fuji at dawn, with vibrant hues painting the sky.</p>">
+                    <picture>
+                        <source srcset="thumbnails/mt-fuji-sunrise-thumb.webp" type="image/webp">
+                        <img class="lazyload" src="/assets/images/placeholders/lazy-load-placeholder.svg" data-src="thumbnails/mt-fuji-sunrise-thumb.jpg" alt="Mount Fuji Sunrise" loading="lazy">
+                    </picture>
+                </a>
+
+                <a href="large/grand-canyon-vista.webp" data-src="large/grand-canyon-vista.webp" data-sub-html="<h4>Grand Canyon Vista</h4><p>The vast and awe-inspiring Grand Canyon bathed in the warm light of sunset.</p>">
+                    <picture>
+                        <source srcset="thumbnails/grand-canyon-vista-thumb.webp" type="image/webp">
+                        <img class="lazyload" src="/assets/images/placeholders/lazy-load-placeholder.svg" data-src="thumbnails/grand-canyon-vista-thumb.jpg" alt="Grand Canyon Vista" loading="lazy">
+                    </picture>
+                </a>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/lightgallery.min.js"></script>
+    <script src="/assets/js/lg-thumbnail.min.js"></script>
+    <script src="/assets/js/lg-zoom.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+        // Initialize LightGallery specifically for this gallery page
+        // It's placed here to ensure LightGallery runs after its own scripts are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryElement = document.getElementById('lightgallery');
+            if (galleryElement) {
+                lightGallery(galleryElement, {
+                    plugins: [lgThumbnail, lgZoom],
+                    speed: 500, // Transition speed
+                    download: false, // Hide the download button in the lightbox
+                    counter: true, // Show image counter (1 of 10)
+                    // licenseKey: 'YOUR_LICENSE_KEY' // Add if you have a key
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Operating System Files
+.DS_Store             # macOS desktop services store
+Thumbs.db             # Windows thumbnail cache
+ehthumbs.db
+Desktop.ini
+.localized
+
+# Editor/IDE Specific Files
+.vscode/              # Visual Studio Code settings
+.idea/                # IntelliJ IDEA / WebStorm settings
+*.sublime-project     # Sublime Text project files
+*.sublime-workspace   # Sublime Text workspace files
+*.atom-workspace      # Atom workspace files
+*.code-workspace      # VS Code workspace files
+*~                    # Backup files common in Linux/Unix editors (e.g., Vim)
+*.swp                 # Vim swap files
+*.swo                 # Vim swap files
+
+# Build / Dependency / Temp Directories (if you introduce build tools later)
+node_modules/         # Common for npm/yarn dependencies (even if not using now, useful if you add JS libraries with package managers)
+/dist/                # Common output directory for build tools (e.g., Webpack, Parcel)
+/build/               # Another common output directory
+.cache/               # Cache directories for various tools
+
+# Logs and other temporary files
+*.log                 # Log files
+*.tmp                 # Temporary files
+.env                  # Environment variables (if you ever use them for local config)
+
+# Images (specific to your workflow, if you generate different versions)
+# You might ignore original, unoptimized images if you only commit web-optimized versions
+# For example, if you keep original RAW files outside the project or in a separate asset repo:
+*.raw
+*.psd
+
+# Personal configuration files (if they exist and you don't want to share)
+my-secret-settings.json # Example
