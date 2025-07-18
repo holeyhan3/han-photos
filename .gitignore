@@ -1,5 +1,5 @@
 # Operating System Files
-.DS_Store             # macOS desktop services store
+*.DS_Store             # macOS desktop services store
 Thumbs.db             # Windows thumbnail cache
 ehthumbs.db
 Desktop.ini
