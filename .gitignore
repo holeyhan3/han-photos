@@ -4,6 +4,8 @@ Thumbs.db             # Windows thumbnail cache
 ehthumbs.db
 Desktop.ini
 .localized
+assets/originals/**/.DS_Store
+assets/originals/**/Thumbs.db
 
 # Editor/IDE Specific Files
 .vscode/              # Visual Studio Code settings
@@ -32,6 +34,8 @@ node_modules/         # Common for npm/yarn dependencies (even if not using now,
 # For example, if you keep original RAW files outside the project or in a separate asset repo:
 *.raw
 *.psd
+# Ignore full-resolution original images (private/raw)
+assets/originals/
 
 # Personal configuration files (if they exist and you don't want to share)
 my-secret-settings.json # Example

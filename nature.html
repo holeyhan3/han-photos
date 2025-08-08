@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About & Contact - Hans Photography</title>
+  <title>Nature - Hans Photography</title>
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,31 +17,19 @@
         <li><a href="portraits.html">Portraits</a></li>
         <li><a href="landscape.html">Landscape</a></li>
         <li><a href="travel.html">Travel</a></li>
-        <li><a href="nature.html">Nature</a></li>
+        <li><a href="nature.html" aria-current="page">Nature</a></li>
         <li><a href="weddings.html">Weddings</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>About Me</h1>
-    <p>Hi! I'm Hans, a passionate photographer. Feel free to explore my portfolio and reach out via the contact form below.</p>
-
-    <section id="contact" aria-label="Contact form">
-      <h2>Contact Me</h2>
-      <form id="contact-form" method="POST" action="YOUR_FORM_HANDLER_URL" novalidate>
-        <label for="name">Name (optional):</label>
-        <input type="text" id="name" name="name" placeholder="Your name" />
-
-        <label for="email" required>Email:</label>
-        <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
-
-        <label for="message" required>Message:</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
+    <h1>Nature</h1>
+    <section class="gallery" aria-label="Nature photos">
+      <img src="assets/low_res/nature1.jpg" data-lightbox-src="assets/medium_res/nature1.jpg" alt="Wildflowers in meadow" loading="lazy" tabindex="0" />
+      <img src="assets/low_res/nature2.jpg" data-lightbox-src="assets/medium_res/nature2.jpg" alt="Bird perched on branch" loading="lazy" tabindex="0" />
+      <img src="assets/low_res/nature3.jpg" data-lightbox-src="assets/medium_res/nature3.jpg" alt="Forest stream" loading="lazy" tabindex="0" />
     </section>
   </main>
 

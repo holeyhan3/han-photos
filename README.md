@@ -1,106 +1,133 @@
-Lens by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Hans Photography Portfolio
 
+A modern, mobile-friendly, and UX-centric personal photography portfolio website showcasing curated categories of photos with optimized image delivery. Includes an automated image build pipeline to generate low- and medium-resolution images for fast loading and a smooth lightbox experience.
 
-This is Lens, a full screen (and entirely responsive) photo gallery design. Unlike previous
-designs I've done in this vein (Parallelism, for instance), this one eschews the usual
-lightbox in favor of a completely full screen experience -- one that I'm happy to say
-translates awesomely all the way down to the tiniest of mobile devices. Full instructions
-below!
+---
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+## Project Overview
 
-(* = Not included)
+This repository contains:
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
+- **Static website** built with clean, accessible HTML/CSS/JS.
+- Responsive layout with auto light/dark theme and manual toggle.
+- Category-based photo galleries with low-res thumbnails and medium-res lightbox images.
+- Accessibility-focused lightbox with keyboard navigation and focus trap.
+- Contact form markup with basic client-side validation.
+- Automated Python image build script to generate web-optimized images.
+- Example `robots.txt`, `404.html`, and `sitemap.xml` for SEO and user experience.
 
-AJ
-aj@lkn.io | @ajlkn
+---
 
+## Repo Structurefor better compression.
+	•	Add watermarking functionality.
 
-Instructions:
+```markdown
+/assets
+/low_res/          # Generated low-res images (thumbnails/previews)
+/medium_res/       # Generated medium-res images (lightbox)
+/originals/        # Place high-res original images here (NOT committed to Git)
+/scripts
+script.js          # JavaScript for theme toggle, lightbox, lazy loading, and validation
+/styles
+styles.css         # Responsive, modern CSS with light/dark theme support
+404.html             # Custom 404 error page
+index.html           # Home page with gallery overview and navigation
+contact.html         # Contact page with form markup
+portfolio.html       # Portfolio page with categorized galleries
+robots.txt           # Instructions for search engines
+sitemap.xml          # Sitemap for SEO
+image_build.py       # Python script to generate optimized images
+requirements.txt     # Python dependencies for image_build.py
+README.md            # This file
+```
 
-	Overview:
+---
 
-		Lens is made up of three primary components:
+## Getting Started
 
-		- The "main wrapper": The skinny little column on the right. Home to what little
-		  "regular" content you may have (header, footer, anything else you want to cram
-		  in there), as well as ...
+### Prerequisites
 
-		- The "thumbnails" section: A grid of thumbnails pointing to their respective
-		  full size images.
+- A modern web browser for viewing the static site.
+- Python 3.7+ to run the image build script.
+- `pip` for installing Python dependencies.
 
-		- The "viewer": Basically the rest of the page, and basically where your full size
-		  images will show up when a thumbnail is clicked.
+### Installation
 
-		Note: Only the main wrapper and the thumbnails section are actually present in
-		index.html. The viewer will be dynamically created on page load.
+1. Clone the repository:
 
-	How it works:
+```bash
+git clone https://github.com/yourusername/hans-photo-portfolio.git
+cd hans-photo-portfolio
+```
 
-		Just add your thumbnails to the thumbnails section in the following format:
+2. Install Python dependencies for the image processing:
 
-			<article>
-				<a class="thumbnail" href="path/to/fullsize.jpg">
-					<img src="path/to/thumbnail.jpg" alt="" />
-				</a>
-				<h2>Title</h2>
-				<p>Description.</p>
-			</article>
+```bash
+pip install -r requirements.txt
+```
 
-		And that's it. Lens will figure out the rest.
+3. Add your high-resolution images into `assets/originals/` (this folder should NOT be committed to Git to keep your originals private).
+4. Run the image build script to generate optimized images:
 
-	The "data-position" attribute:
+```bash
+python image_build.py
+```
 
-		As a full screen experience, the viewer will be subject to changes in its size and,
-		consequently, its aspect ratio. Since your full size images are basically applied as
-		backgrounds to the viewer itself, this means they'll probably (okay, definitely) get
-		cropped. All is not lost, however, as you can use the optional "data-position" attribute
-		to control how the full size image is positioned within the viewer. To do this, simply
-		add it to your thumbnail's <a> element and set it to any valid "background-position"
-		value. For example, this:
+5. Open `index.html` in a browser to preview your portfolio locally.
 
-			<a class="thumbnail" href="path/to/fullsize.jpg" data-position="top left">...</a>
+#### Deployment
 
-		... positions this particular full size image in the top left corner of the viewer (as
-		opposed to its center, the default), effectively limiting cropping to everything but
-		the top left corner.
+- Since the site is static, you can host it on GitHub Pages, Netlify, Render (static site), Vercel, or any static hosting service.
+- Make sure to exclude the `assets/originals/` folder from deployment for privacy and size reasons.
+- Use HTTPS for security and better SEO.
+- If you use a contact form backend, update the form’s action attribute accordingly.
 
-	Keyboard shortcuts:
+#### Features ####
 
-		Lens is set up to respond to the following keyboard shortcuts:
+- Responsive design: Works flawlessly on mobile, tablet, and desktop.
+- Light/dark mode: Auto switch based on system preferences with manual toggle.
+- Categorized galleries: Portraits, landscapes, travel, nature, weddings.
+- Optimized images: Fast-loading thumbnails and medium-res lightbox images.
+- Accessible lightbox: Keyboard navigable and focus-trapped modal.
+- Contact form: Basic validation with extensible markup.
+- SEO-friendly: Custom 404, sitemap, robots.txt included.
+- Lazy loading: Images load as you scroll for performance boost.
 
-		- Left Arrow: Go to previous image.
-		- Right Arrow: Go to next image.
-		- Up Arrow: Go to image above the current one in the thumbnails section.
-		- Down Arrow: Go to image below the current one in the thumbnails section.
-		- Space: Go to next image.
-		- Escape: Toggle the main wrapper.
+### How to Add New Photos ###
+1. Place your new high-res photos into `assets/originals/`.
+2. Run `python image_build.py` again to generate updated low and medium-res images.
+3. Update the HTML galleries if needed by adding `<img>` tags with the proper src and data-lightbox-src attributes pointing to `low_res/` and `medium_res/` images respectively.
 
-		Note: All keyboard shortcuts are disabled when the "xsmall" breakpoint is active
-		(since they don't really make a whole lot of sense there).
+### Customization ###
 
-	Other stuff:
+- Adjust styles in `/styles/styles.css` for branding or layout tweaks.
+- Modify JS behavior in `/scripts/script.js` for enhanced interactivity.
+- Extend the Python image build script for watermarking or additional formats (e.g., `WebP`).
+- Add backend for contact form if desired (`Flask/Django/Node`, etc.).
 
-		- The main wrapper can be moved to the left by changing the "misc.main-side" variable
-		  in assets/sass/libs/_vars.scss to "left" (and of course recompiling your CSS).
+⸻
 
-		- Additional tweakable settings can be found at the top of assets/js/main.js, but
-		  be aware most of these need to sync with certain Sass variables (see comments
-		  for details).
+### Development Tips ###
 
+- Use a live server (VSCode Live Server or python `-m http.server`) to test locally with auto-refresh.
+- Optimize images beforehand to keep repo size small.
+- Commit only optimized images (`low_res` and `medium_res`), never originals.
+- Keep your domain and hosting setup separate for flexibility (e.g., Cloudflare DNS + GitHub Pages).
 
-Credits:
+⸻
 
-	Demo Images:
-		Unsplash (unsplash.com)
+License & Credits
 
-	Icons:
-		Font Awesome (fontawesome.io)
+© 2025 Hans — All rights reserved.
 
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Inspired by best practices from leading photographers and web developers, focusing on usability, performance, and accessibility.
+
+⸻
+
+Contact
+
+Questions? Feedback? Collaborations? Use the contact form on the site or open an issue here.
+
+⸻
+
+Happy shooting and coding! 📸💻
