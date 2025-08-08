@@ -6,6 +6,7 @@ Desktop.ini
 .localized
 assets/originals/**/.DS_Store
 assets/originals/**/Thumbs.db
+*.mypy_cache/
 
 # Editor/IDE Specific Files
 .vscode/              # Visual Studio Code settings
